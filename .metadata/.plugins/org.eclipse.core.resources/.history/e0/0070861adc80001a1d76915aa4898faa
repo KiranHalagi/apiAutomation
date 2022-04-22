@@ -1,0 +1,27 @@
+package libraryApi;
+
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import static io.restassured.RestAssured.*;
+
+public class LibraryApiDemo {
+
+	@Test
+	public static void library()
+	{
+		RestAssured.baseURI="";
+		given().body("{\r\n" + 
+				"\r\n" + 
+				"\"name\":\"Learn Appium Automation with Java\",\r\n" + 
+				"\"isbn\":\"bcd\",\r\n" + 
+				"\"aisle\":\"108\",\r\n" + 
+				"\"author\":\"John foe\"\r\n" + 
+				"}")
+		.when().post("/Library/Addbook.php")
+		.then().log().all().assertThat().statusCode(200);
+	}
+	
+	
+
+}

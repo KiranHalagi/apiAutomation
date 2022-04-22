@@ -1,0 +1,37 @@
+package libraryApi;
+
+import io.restassured.RestAssured;
+import static io.restassured.RestAssured.*;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+
+
+public class Static_Json {
+
+	public static void main(String[] args) throws FileNotFoundException {
+      
+		RestAssured.baseURI="://216.10.245.166";
+		given().body(file("F:\\webserviceqaclick\\Static_Json.json"))
+		.when().post("/Library/Addbook.php")
+		.then().log().all().assertThat().statusCode(200);
+		
+		
+		
+	
+	
+        
+		
+	}
+	
+	public static String file(String path) throws FileNotFoundException 
+	{
+		FileInputStream obj=new FileInputStream(path);
+		
+		return path;
+		
+		
+	}
+
+}

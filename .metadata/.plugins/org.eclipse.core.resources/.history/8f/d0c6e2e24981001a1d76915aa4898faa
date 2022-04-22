@@ -1,0 +1,10 @@
+package libraryApi;
+
+public class Static_Json {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
